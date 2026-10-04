@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="REPARO E CLICK - Assistência Técnica Especializada em Eletrodomésticos. Atendimento profissional, orçamento e suporte pelo WhatsApp.">
+  <title>REPARO E CLICK | Assistência Técnica</title>
+  <style>
+    :root{
+      --navy:#0b1f3a;
+      --blue:#1559a6;
+      --blue2:#2176d2;
+      --orange:#f58220;
+      --orange2:#ff9a3d;
+      --light:#f5f8fc;
+      --text:#172235;
+      --muted:#667085;
+      --white:#fff;
+      --shadow:0 12px 35px rgba(11,31,58,.10);
+      --radius:18px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);
+      border-bottom:1px solid #e9eef5;backdrop-filter:blur(8px)
+    }
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .logo{font-weight:900;font-size:22px;letter-spacing:-.6px;color:var(--navy);display:flex;align-items:center;gap:9px}
+    .logo-mark{width:38px;height:38px;border-radius:11px;background:var(--navy);display:grid;place-items:center;color:#fff;font-size:18px;box-shadow:inset 0 -4px 0 var(--orange)}
+    .logo span{color:var(--orange)}
+    nav{display:flex;gap:24px;align-items:center}
+    nav a{font-size:14px;font-weight:700;color:#445066}
+    nav a:hover{color:var(--orange)}
+    .nav-btn{background:var(--orange);color:#fff!important;padding:11px 17px;border-radius:10px}
+    .hero{background:linear-gradient(135deg,var(--navy),#123b6b 62%,var(--blue));color:#fff;overflow:hidden}
+    .hero-grid{min-height:590px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:45px;padding:70px 0}
+    .eyebrow{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:8px 13px;border-radius:99px;font-size:13px;font-weight:800;margin-bottom:18px}
+    h1{font-size:clamp(39px,6vw,67px);line-height:1.02;letter-spacing:-2.5px;margin-bottom:22px}
+    h1 strong{color:var(--orange2)}
+    .hero p{font-size:18px;color:#dce8f7;max-width:610px;margin-bottom:30px}
+    .actions{display:flex;flex-wrap:wrap;gap:13px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:11px;font-weight:800;border:1px solid transparent;transition:.2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--orange);color:#fff}
+    .btn-light{background:#fff;color:var(--navy)}
+    .hero-card{background:#fff;color:var(--text);border-radius:25px;padding:30px;box-shadow:0 25px 55px rgba(0,0,0,.18);position:relative}
+    .hero-card:before{content:"";position:absolute;right:-35px;top:-35px;width:100px;height:100px;border-radius:50%;background:var(--orange);opacity:.9}
+    .hero-card h2{font-size:25px;color:var(--navy);margin-bottom:9px;position:relative}
+    .hero-card p{color:var(--muted);font-size:15px;margin-bottom:22px}
+    .check{display:flex;gap:11px;align-items:flex-start;margin:13px 0;font-weight:700}
+    .check b{width:25px;height:25px;display:grid;place-items:center;background:#eaf3ff;color:var(--blue);border-radius:50%;font-size:14px;flex:none}
+    section{padding:80px 0}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 42px}
+    .section-head .tag{color:var(--orange);font-weight:900;text-transform:uppercase;letter-spacing:1.2px;font-size:12px}
+    .section-head h2{font-size:38px;line-height:1.15;color:var(--navy);margin:9px 0 12px}
+    .section-head p{color:var(--muted)}
+    .services{background:var(--light)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border:1px solid #e7edf5;border-radius:var(--radius);padding:25px;box-shadow:0 5px 18px rgba(11,31,58,.04);transition:.2s}
+    .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .icon{width:52px;height:52px;border-radius:14px;background:#eaf3ff;color:var(--blue);display:grid;place-items:center;font-size:25px;margin-bottom:17px}
+    .card h3{font-size:18px;color:var(--navy);margin-bottom:6px}
+    .card p{font-size:14px;color:var(--muted)}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+    .why-box{background:var(--navy);color:#fff;border-radius:25px;padding:35px}
+    .why-box h2{font-size:34px;line-height:1.15;margin-bottom:15px}
+    .why-box p{color:#cbd9e9}
+    .benefits{display:grid;gap:15px}
+    .benefit{display:flex;gap:15px;padding:20px;background:#fff;border:1px solid #e7edf5;border-radius:15px}
+    .benefit .mini{width:42px;height:42px;flex:none;border-radius:11px;background:#fff2e8;color:var(--orange);display:grid;place-items:center;font-weight:900}
+    .benefit h3{font-size:16px;color:var(--navy)}
+    .benefit p{font-size:13px;color:var(--muted)}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+    .step{padding:25px;border:1px solid #e7edf5;border-radius:18px;background:#fff}
+    .number{font-size:13px;font-weight:900;color:var(--orange);margin-bottom:14px}
+    .step h3{color:var(--navy);font-size:17px;margin-bottom:6px}
+    .step p{font-size:13px;color:var(--muted)}
+    .cta{background:linear-gradient(135deg,#eef5ff,#fff5ed)}
+    .cta-box{background:#fff;border:1px solid #e5ebf3;border-radius:25px;padding:45px;display:flex;justify-content:space-between;align-items:center;gap:30px;box-shadow:var(--shadow)}
+    .cta-box h2{color:var(--navy);font-size:35px;line-height:1.15;margin-bottom:10px}
+    .cta-box p{color:var(--muted);max-width:650px}
+    footer{background:#07182d;color:#c8d4e2;padding:45px 0 25px}
+    .footer-grid{display:flex;justify-content:space-between;gap:35px;align-items:flex-start}
+    footer h3{color:#fff;margin-bottom:8px}
+    footer p{font-size:14px}
+    .footer-brand{font-size:22px;font-weight:900;color:#fff}
+    .footer-brand span{color:var(--orange)}
+    .copyright{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-top:20px;font-size:12px;color:#8fa0b5}
+    .whatsapp{position:fixed;right:20px;bottom:20px;z-index:30;background:#20b85a;color:#fff;border-radius:50px;padding:14px 18px;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.2);display:flex;gap:8px;align-items:center}
+    @media(max-width:850px){
+      nav{display:none}
+      .hero-grid,.why-grid{grid-template-columns:1fr}
+      .hero-grid{padding:55px 0}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:repeat(2,1fr)}
+      .cta-box{flex-direction:column;align-items:flex-start}
+    }
+    @media(max-width:560px){
+      section{padding:60px 0}
+      .cards,.steps{grid-template-columns:1fr}
+      .hero-card{padding:24px}
+      .section-head h2{font-size:31px}
+      .cta-box{padding:30px}
+      .footer-grid{flex-direction:column}
+      .whatsapp{right:12px;bottom:12px;padding:12px 15px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#inicio" class="logo">
+      <span class="logo-mark">⚙</span>
+      REPARO <span>E CLICK</span>
+    </a>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Por que nós</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#orcamento" class="nav-btn">Solicitar orçamento</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">ASSISTÊNCIA TÉCNICA ESPECIALIZADA</span>
+        <h1>Seu eletrodoméstico em <strong>boas mãos.</strong></h1>
+        <p>Manutenção e reparo de eletrodomésticos com atendimento profissional, diagnóstico cuidadoso e solução para o seu equipamento.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/5521977624043?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20reparo%20de%20um%20eletrodoméstico." target="_blank">💬 Falar pelo WhatsApp</a>
+          <a class="btn btn-light" href="#servicos">Ver serviços</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h2>Atendimento para diversos aparelhos</h2>
+        <p>Conte o que está acontecendo com seu equipamento e fale com a nossa equipe.</p>
+        <div class="check"><b>✓</b><span>Diagnóstico e avaliação do aparelho</span></div>
+        <div class="check"><b>✓</b><span>Manutenção e reparos</span></div>
+        <div class="check"><b>✓</b><span>Orçamento antes do serviço</span></div>
+        <div class="check"><b>✓</b><span>Atendimento pelo WhatsApp</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicos">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">Nossos serviços</span>
+        <h2>Reparo para os principais eletrodomésticos</h2>
+        <p>Atendimento para manutenção, diagnóstico e correção de problemas em diferentes tipos de equipamentos.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="icon">❄️</div><h3>Geladeira e Refrigerador</h3><p>Diagnóstico de falhas, refrigeração, componentes elétricos e funcionamento geral.</p></article>
+        <article class="card"><div class="icon">🧊</div><h3>Freezer</h3><p>Avaliação e reparo de problemas de refrigeração e funcionamento.</p></article>
+        <article class="card"><div class="icon">🧺</div><h3>Máquina de lavar</h3><p>Manutenção e diagnóstico de falhas em máquinas de lavar roupas.</p></article>
+        <article class="card"><div class="icon">🫧</div><h3>Lava e seca</h3><p>Reparo e avaliação de ciclos de lavagem, secagem e componentes.</p></article>
+        <article class="card"><div class="icon">👕</div><h3>Secadora de roupas</h3><p>Diagnóstico de aquecimento, secagem, comandos e funcionamento.</p></article>
+        <article class="card"><div class="icon">🍽️</div><h3>Lava-louças</h3><p>Manutenção e diagnóstico de falhas no ciclo e nos componentes.</p></article>
+        <article class="card"><div class="icon">〰️</div><h3>Micro-ondas</h3><p>Avaliação de falhas de funcionamento, aquecimento e comandos.</p></article>
+        <article class="card"><div class="icon">🔥</div><h3>Fogão e Cooktop</h3><p>Serviços de manutenção, instalação, conversão e diagnóstico.</p></article>
+        <article class="card"><div class="icon">♨️</div><h3>Forno</h3><p>Diagnóstico e manutenção de fornos elétricos e a gás.</p></article>
+        <article class="card"><div class="icon">🌬️</div><h3>Ar-condicionado</h3><p>Manutenção e avaliação de aparelhos de ar-condicionado.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="container why-grid">
+      <div class="why-box">
+        <h2>Por que escolher a REPARO E CLICK?</h2>
+        <p>Nosso objetivo é tornar o atendimento mais simples e transparente: você explica o problema, avaliamos o equipamento e orientamos sobre a melhor solução.</p>
+      </div>
+      <div class="benefits">
+        <div class="benefit"><div class="mini">01</div><div><h3>Atendimento direto</h3><p>Fale conosco pelo WhatsApp de forma rápida e prática.</p></div></div>
+        <div class="benefit"><div class="mini">02</div><div><h3>Diagnóstico</h3><p>O equipamento é avaliado para identificar a causa do problema.</p></div></div>
+        <div class="benefit"><div class="mini">03</div><div><h3>Orçamento</h3><p>Você recebe as informações necessárias antes da execução do reparo.</p></div></div>
+        <div class="benefit"><div class="mini">04</div><div><h3>Praticidade</h3><p>Centralizamos o atendimento para facilitar sua solicitação.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">Como funciona</span>
+        <h2>É simples solicitar atendimento</h2>
+        <p>Quatro etapas para você sair do problema até a solução.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="number">PASSO 01</div><h3>Entre em contato</h3><p>Envie uma mensagem pelo WhatsApp informando o aparelho e o problema.</p></div>
+        <div class="step"><div class="number">PASSO 02</div><h3>Explique o defeito</h3><p>Se possível, envie fotos, vídeos ou detalhes do que está acontecendo.</p></div>
+        <div class="step"><div class="number">PASSO 03</div><h3>Avaliação</h3><p>Orientamos sobre a avaliação necessária e as condições do atendimento.</p></div>
+        <div class="step"><div class="number">PASSO 04</div><h3>Solução</h3><p>Após aprovação do orçamento, seguimos com o serviço combinado.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="orcamento">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <h2>Seu aparelho apresentou problema?</h2>
+          <p>Não sabe o que aconteceu? Fale com a REPARO E CLICK e explique o defeito. Nossa equipe orientará você sobre o próximo passo.</p>
+        </div>
+        <a class="btn btn-primary" href="https://wa.me/5521977624043?text=Olá!%20Sou%20cliente%20e%20quero%20solicitar%20um%20orçamento." target="_blank">Solicitar orçamento →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">REPARO <span>E CLICK</span></div>
+        <p>Assistência Técnica Especializada em Eletrodomésticos.</p>
+      </div>
+      <div>
+        <h3>Atendimento</h3>
+        <p>WhatsApp: (21) 97762-4043</p>
+      </div>
+    </div>
+    <div class="copyright">© 2026 REPARO E CLICK. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5521977624043?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." target="_blank" aria-label="Falar no WhatsApp">💬 WhatsApp</a>
+
+</body>
+</html>
